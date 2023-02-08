@@ -177,16 +177,16 @@ public class ValidationItemControllerV2 {
 
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
-            bindingResult.rejectValue("item", "required");
+            bindingResult.rejectValue("itemName", "required");
         }
 
         if (item.getPrice() == null || item.getPrice() < 1_000 || item.getPrice() > 1_000_000) {
-            bindingResult.rejectValue("item", "range",
+            bindingResult.rejectValue("price", "range",
                     new Object[]{1_000, 1_000_000}, null);
         }
 
         if (item.getQuantity() == null || item.getQuantity() >= 9_999) {
-            bindingResult.rejectValue("item", "max",
+            bindingResult.rejectValue("quantity", "max",
                     new Object[]{9_999}, null);
         }
 
