@@ -76,7 +76,7 @@ public class ValidationItemControllerV2 {
 
         //검증에 실패하면 다시 입력 폼으로
         if (bindingResult.hasErrors()) {
-            log.info("errors={}", bindingResult);
+            log.info("bindingResult={}", bindingResult);
             return "validation/v2/addForm";
         }
 
